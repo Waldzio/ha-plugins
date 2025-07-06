@@ -1,0 +1,8 @@
+{
+  "name": "WB Custom Add-ons",
+  "url": "https://github.com/Waldzio/ha-addons",
+  "maintainer": "Waldemar Bieniek",
+  "addons": [
+    "ping_logger"
+  ]
+}

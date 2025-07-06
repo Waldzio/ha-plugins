@@ -1,0 +1,62 @@
+{
+  "name": "Ping Logger",
+  "version": "0.3.3",
+  "slug": "ping_logger",
+  "description": "Addon: Loguje ping wybranych adresów IP oraz publikuje sensory przez MQTT.\n\nUwaga: Twój broker MQTT wymaga podania loginu i hasła do Home Assistanta (tego, którym logujesz się do panelu HA). Wpisz swój login i hasło do Home Assistanta poniżej.",
+  "startup": "application",
+  "boot": "auto",
+  "host_network": true,
+  "options": {
+    "targets": ["8.8.8.8", "1.1.1.1"],
+    "interval": 2,
+    "keep_days": 2,
+    "mqtt_host": "localhost",
+    "mqtt_port": 1883,
+    "mqtt_user": "",
+    "mqtt_pass": ""
+  },
+  "schema": {
+    "targets": {
+      "type": "list",
+      "required": true,
+      "items": {
+        "type": "string"
+      },
+      "description": "Lista adresów IP do pingowania (np. 8.8.8.8, 1.1.1.1)"
+    },
+    "interval": {
+      "type": "int",
+      "required": true,
+      "description": "Interwał (w sekundach) pomiędzy pingami"
+    },
+    "keep_days": {
+      "type": "int",
+      "required": true,
+      "description": "Ile dni trzymać logi pingu (starsze są kasowane)"
+    },
+    "mqtt_host": {
+      "type": "string",
+      "required": true,
+      "description": "Adres brokera MQTT (najczęściej localhost – nie zmieniaj)"
+    },
+    "mqtt_port": {
+      "type": "int",
+      "required": true,
+      "description": "Port brokera MQTT (domyślnie 1883 – nie zmieniaj)"
+    },
+    "mqtt_user": {
+      "type": "string",
+      "required": true,
+      "description": "Login do Home Assistanta (ten sam, którym logujesz się do panelu HA)."
+    },
+    "mqtt_pass": {
+      "type": "string",
+      "required": true,
+      "description": "Hasło do użytkownika Home Assistanta (to samo, co do panelu HA)."
+    }
+  },
+  "panel": false,
+  "ingress": false,
+  "arch": ["amd64", "aarch64", "armv7", "armhf"],
+  "build": true
+}
