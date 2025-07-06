@@ -1,6 +1,6 @@
 {
   "name": "WB Custom Add-ons",
-  "url": "https://github.com/Waldzio/ha-addons",
+  "url": "https://github.com/Waldzio/ha-plugins",
   "maintainer": "Waldemar Bieniek",
   "addons": [
     "ping_logger"
